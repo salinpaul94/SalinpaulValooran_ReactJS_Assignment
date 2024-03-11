@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 import MovieList from './components/MovieList';
 
 const App = () => {
@@ -40,10 +42,12 @@ const App = () => {
   },
   ]);
   return ( 
-    <div>
-      <MovieList movies={movies} />
+    <div className='container-fluid movie-app'>
+      <div className='d-flex flex-nowrap'>
+        <MovieList movies={movies} />
+      </div>
     </div>
-  )
+  );
 };
 
 export default App;

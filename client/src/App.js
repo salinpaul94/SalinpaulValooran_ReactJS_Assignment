@@ -4,6 +4,7 @@ import './App.css'
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './SearchBox';
+import AddFavourite from './components/AddFavourites';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -35,7 +36,7 @@ const App = () => {
       <br/>
       <br/>
       <div className='d-flex flex-nowrap'>
-        <MovieList movies={movies} />
+        <MovieList movies={movies} favouriteComponent={AddFavourite}/>
       </div>
     </div>
   );

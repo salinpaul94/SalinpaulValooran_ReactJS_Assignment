@@ -48,6 +48,16 @@ const App = () => {
           favouriteComponent={AddFavourite}
         />
       </div>
+      <div className='row d-flex align-items-center mt-4 mb-4'>
+        <MovieListHeading heading="Favourites"/>
+      </div>
+      <div className='d-flex flex-nowrap'>
+        <MovieList 
+          movies={favourites} 
+          handleFavouritesClick={addFavouriteMovie}
+          favouriteComponent={AddFavourite}
+        />
+      </div>
     </div>
   );
 };

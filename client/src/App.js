@@ -8,6 +8,7 @@ import AddFavourite from './components/AddFavourites';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [favourites, setFavourites] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   
   const getMovieRequest = async (searchValue) => {
@@ -25,6 +26,11 @@ const App = () => {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
+  const addFavouriteMovie = (movie) => {
+    const newFavouriteList = [...favourites, movie];
+    setFavourites(newFavouriteList);
+  };
+
   return ( 
     <div className='container-fluid movie-app'>
       <div className='row d-flex align-items-center mt-4 mb-4 fixed-top'>
@@ -36,7 +42,11 @@ const App = () => {
       <br/>
       <br/>
       <div className='d-flex flex-nowrap'>
-        <MovieList movies={movies} favouriteComponent={AddFavourite}/>
+        <MovieList 
+          movies={movies} 
+          handleFavouritesClick={addFavouriteMovie}
+          favouriteComponent={AddFavourite}
+        />
       </div>
     </div>
   );

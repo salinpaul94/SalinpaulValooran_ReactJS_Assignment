@@ -5,6 +5,7 @@ import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './SearchBox';
 import AddFavourite from './components/AddFavourites';
+import RemoveFavourites from './RemoveFavourites';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -55,7 +56,7 @@ const App = () => {
         <MovieList 
           movies={favourites} 
           handleFavouritesClick={addFavouriteMovie}
-          favouriteComponent={AddFavourite}
+          favouriteComponent={RemoveFavourites}
         />
       </div>
     </div>
